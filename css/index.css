@@ -21,7 +21,7 @@ body
 	height: 100%;
 	width: 100%;
 
-	overflow-y: auto;
+	overflow-y: scroll;
 	scroll-snap-type: y mandatory;
 
 	background-color: #000000;
@@ -106,12 +106,12 @@ section
 
 .background
 {
-	position: fixed;
+	position: absolute;
 	top: -15px;
 	bottom: -15px;
 
-	width: calc(100% + 30px);
-	height: calc(100% + 30px);
+	width: calc(100vw + 30px);
+	height: calc(100vh + 30px);
 
 	background-position: center;
 	background-repeat: no-repeat;
@@ -126,8 +126,8 @@ section
 	top: -15px;
 	bottom: -15px;
 
-	width: calc(100% + 30px);
-	height: calc(100% + 30px);
+	width: calc(100vw + 30px);
+	height: calc(100vh + 30px);
 
 	background-color: #000000;
 	opacity: 0.6;
