@@ -197,6 +197,11 @@ section
 	color: #ffffff;
 }
 
+.sociallinks .link a:hover
+{
+	color: #e0871e;
+}
+
 .buttonlink
 {
 	position: relative;
@@ -391,6 +396,21 @@ section
 #message
 {
 	width: 100%;
+}
+
+.copyrighttext
+{
+	position: relative;
+	top: calc((50/768) * ((100vw + 100vh) / 2));
+	left: 0px;
+
+	width: 100%;
+	height: calc((40/768) * ((100vw + 100vh) / 2));
+
+	text-align: center;
+	font-size: calc((15/768) * ((100vw + 100vh) / 2));
+	font-family: 'Comfortaa', cursive;
+	color: #ffffff;
 }
 
 .upbutton

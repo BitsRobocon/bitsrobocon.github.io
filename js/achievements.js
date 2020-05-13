@@ -2,6 +2,11 @@ $(document).ready(function(){
 	$(document.body).on('scroll', function(){
 		fadeOut($('.title')[0]);
 		fadeOut($('.text')[0]);
+
+		// for(var i = 0; i < $('.achievement').length; i++)
+		// {
+		// 	fadeOut($('.achievement')[i]);
+		// }
 	});
 
 	for(var i = 0; i < $('.achievement').length; i++)
