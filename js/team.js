@@ -41,23 +41,22 @@ function fadeOut(element){
 }
 
 function hoverAbout(element){
-	element.addEventListener("touchend", function(event){
-		event.preventDefault();
-		for (var i = 0; i < element.childNodes.length; i++) {
-		    if ((element.childNodes[i].className == "about")||(element.childNodes[i].className == "aboutoverlay"))
-			{
-				if (element.childNodes[i].style.visibility == 'hidden')
-				{
-					console.log('hidden');
-					element.childNodes[i].style.visibility = 'visible';
-				}
-				else
-				{
-					element.childNodes[i].style.visibility = 'hidden';
-				}
-		    }
-		}
-	});
+	// element.addEventListener("touchend", function(event){
+	// 	event.preventDefault();
+	// 	for (var i = 0; i < element.childNodes.length; i++) {
+	// 	    if ((element.childNodes[i].className == "about")||(element.childNodes[i].className == "aboutoverlay"))
+	// 		{
+	// 			if (element.childNodes[i].style.visibility == 'hidden')
+	// 			{
+	// 				element.childNodes[i].style.visibility = 'visible';
+	// 			}
+	// 			else
+	// 			{
+	// 				element.childNodes[i].style.visibility = 'hidden';
+	// 			}
+	// 	    }
+	// 	}
+	// });
 
 	element.addEventListener("mouseover", function(){
 		for (var i = 0; i < element.childNodes.length; i++) {

@@ -9,7 +9,6 @@ html
 {
 	height: 100vh;
 	width: 100vw;
-
 	overflow: hidden;
 
 	margin: 0px;
@@ -22,9 +21,10 @@ body
 	height: 100%;
 	width: 100%;
 
-	background-color: #000000;
-
 	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+
+	background-color: #000000;
 
 	margin: 0px;
 	border: 0px;
@@ -85,9 +85,28 @@ body
 	text-decoration: none;
 }
 
+section
+{
+	position: relative;
+	top: 0px;
+	left: 0px;
+
+	min-height: 100%;
+	height: 100%;
+	width: 100%;
+
+	margin: 0px;
+	border: 0px;
+
+	scroll-snap-align: center;
+	overflow: hidden;
+
+	z-index: 1;
+}
+
 .background
 {
-	position: absolute;
+	position: fixed;
 	top: -15px;
 	bottom: -15px;
 
@@ -175,23 +194,33 @@ body
 	margin: 0px calc((50/768) * ((100vw + 100vh) / 2));
 }
 
-.year
+.achievements
+{
+	position: relative;
+	top: calc((150/768) * ((100vw + 100vh) / 2));
+	left: 0px;
+
+	width: calc(100% - ((60/768) * ((100vw + 100vh) / 2)));
+	height: auto;
+
+	margin: 0px calc((30/768) * ((100vw + 100vh) / 2));
+}
+
+.achievement
 {
 	position: relative;
 	top: 0px;
 	left: 0px;
 
-	width: auto;
-	height: auto;
+	width: calc(100% - ((20/768) * ((100vw + 100vh) / 2)));
+	height: calc(100% - ((20/768) * ((100vw + 100vh) / 2)));
 
-	display: table;
-	margin-top: calc((20/768) * ((100vw + 100vh) / 2));
-	margin-bottom: calc((20/768) * ((100vw + 100vh) / 2));
-	padding-top: calc((50/768) * ((100vw + 100vh) / 2));
-	padding-bottom: calc((50/768) * ((100vw + 100vh) / 2));
+	margin: calc((10/768) * ((100vw + 100vh) / 2));
+	border-radius: calc((10/768) * ((100vw + 100vh) / 2));
+	overflow: hidden;
 }
 
-.cover
+.achievement .image
 {
 	position: absolute;
 	top: 0px;
@@ -200,165 +229,91 @@ body
 	width: 100%;
 	height: 100%;
 
-	background-color: #000000;
-	opacity: 0.6;
-}
-
-.heading
-{
-	position: relative;
-	top: 0px;
-	left: 0px;
-
-	width: 100%;
-
-	margin-bottom: calc((15/768) * ((100vw + 100vh) / 2));
-
-	font-size: calc((30/768) * ((100vw + 100vh) / 2));
-	color: #ffffff;
-	font-family: 'Raleway', sans-serif;
-}
-
-.membercard
-{
-	position: relative;
-	top: 0px;
-	left: 0px;
-
-	width: calc((150/768) * ((100vw + 100vh) / 2));
-	height: calc((230/768) * ((100vw + 100vh) / 2));
-
-	margin: calc((15/768) * ((100vw + 100vh) / 2));
-	overflow: hidden;
-}
-
-#juniors, #freshmen
-{
-	padding-left: calc((40/768) * ((100vw + 100vh) / 2));
-	margin-right: calc((80/768) * ((100vw + 100vh) / 2));
-}
-
-#juniors .membercard, #freshmen .membercard
-{
-	float: left;
-}
-
-#juniors .heading, #freshmen .heading
-{
-	text-align: left;
-}
-
-#sophomores
-{
-	padding-right: calc((40/768) * ((100vw + 100vh) / 2));
-	margin-left: calc((80/768) * ((100vw + 100vh) / 2));
-}
-
-#sophomores .membercard
-{
-	float: right;
-}
-
-#sophomores .heading
-{
-	text-align: right;
-}
-
-.membercard .image
-{
-	position: relative;
-	top: 0px;
-	left: 0px;
-
-	width: 100%;
-	height: calc(100% - ((35/768) * ((100vw + 100vh) / 2)));
-
-	background-image: url('../images/user1.jpg');
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 }
 
-.membercard .name
+.achievement .aboutoverlay
 {
 	position: absolute;
-	bottom: calc((12/768) * ((100vw + 100vh) / 2));
+	top: 0px;
 	left: 0px;
 
 	width: 100%;
+	height: 100%;
 
-	font-family: 'Muli', sans-serif;
-	font-size: calc((12/768) * ((100vw + 100vh) / 2));
-	color: #ffffff;
+	background-color: #dd8327;
+	opacity: 0.7;
+	visibility: hidden;
 }
 
-.membercard .role
+.achievement .about
 {
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
 
-	width: 100%;
-
-	font-family: 'Muli', sans-serif;
-	font-size: calc((8/768) * ((100vw + 100vh) / 2));
-	color: #cccccc;
+	margin: calc((20/768) * ((100vw + 100vh) / 2)) calc((30/768) * ((100vw + 100vh) / 2));
 }
 
-.membercard .about
+.achievement .about
 {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-
-	width: 100%;
-	height: calc(100% - ((35/768) * ((100vw + 100vh) / 2)));
-
-	padding: calc((12/768) * ((100vw + 100vh) / 2)) calc((5/768) * ((100vw + 100vh) / 2));
-
-	overflow: scroll;
+	text-align: left;
 	visibility: hidden;
-
-	font-family: 'Comfortaa', cursive;
-	font-size: calc((10/768) * ((100vw + 100vh) / 2));
-	line-height: calc((12/768) * ((100vw + 100vh) / 2));
-	text-align: center;
-	color: #ffffff;
-
-	z-index: 5;
 }
 
-.membercard .about a
+.achievement .about.alt
 {
-	font-size: calc((20/768) * ((100vw + 100vh) / 2));
+	text-align: right;
+}
+
+.achievement .about .title
+{
+	font-size: calc((25/768) * ((100vw + 100vh) / 2));
+	color: #ffffff;
+	font-family: 'Muli', sans-serif;
+
+	margin-bottom: calc((10/768) * ((100vw + 100vh) / 2));
+}
+
+.achievement .about .text
+{
+	font-size: calc((15/768) * ((100vw + 100vh) / 2));
+	color: #ffffff;
+	font-family: 'Raleway', sans-serif;
+}
+
+.achievement .about .buttonlink
+{
+	position: relative;
+
+	margin-left: calc((5/768) * ((100vw + 100vh) / 2));
+	margin-right: calc((5/768) * ((100vw + 100vh) / 2));
+	margin-top: calc((20/768) * ((100vw + 100vh) / 2));
+	border: calc((1.5/768) * ((100vw + 100vh) / 2)) solid #ffffff;
+	border-radius: calc((10/768) * ((100vw + 100vh) / 2));
+	padding: calc((10/768) * ((100vw + 100vh) / 2)) calc((20/768) * ((100vw + 100vh) / 2));
+
+	font-family: 'Raleway', sans-serif;
+	font-size: calc((15/768) * ((100vw + 100vh) / 2));
+	text-align: center;
+}
+
+.achievement .about .buttonlink a
+{
 	text-decoration: none;
 	color: #ffffff;
 }
 
-.membercard .about a:hover
+.achievement .about .buttonlink:hover
 {
-	color: #ddb81e;
+	background-color: #eeeeee;
 }
 
-.membercard .about a i
+.achievement .about .buttonlink:hover a
 {
-	padding: calc((5/768) * ((100vw + 100vh) / 2));
-}
-
-.membercard .aboutoverlay
-{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-
-	width: 100%;
-	height: calc(100% - ((35/768) * ((100vw + 100vh) / 2)));
-
-	background-color: #0072ab;
-	opacity: 0.8;
-	visibility: hidden;
-
-	z-index: 4;
+	color: #000000;
 }
 
 .footer
