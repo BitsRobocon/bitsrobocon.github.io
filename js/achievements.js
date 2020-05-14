@@ -54,15 +54,3 @@ function hoverAbout(element){
 		}
 	});
 }
-
-function resizeBackground() {
-	var h = $(window).height();
-	var w =  $(window).width();
-	$('.background').height(h + ((30/768)*((w+h)/2)));
-	$('.overlay').height(h + ((30/768)*((w+h)/2)));
-	$('.background').width(w + ((30/768)*((w+h)/2)));
-	$('.overlay').width(w + ((30/768)*((w+h)/2)));
-}
-
-// $(window).resize(resizeBackground);
-resizeBackground();
