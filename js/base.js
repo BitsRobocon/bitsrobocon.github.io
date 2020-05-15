@@ -1,6 +1,6 @@
-$('<img/>').attr('opacity', '0px').attr('src', 'content/images/drone_cross.svg').on('load', function() {
+$('<img/>').attr('style', 'width: 100px; height: 100px; opacity: 0px; position: absolute; top: 0px; left: 0px;').attr('src', 'content/images/drone_cross.svg').on('load', function() {
    $(this).remove();
-   $('body').css('background-image', 'url(content/images/drone_cross.svg)');
+   $('.drone').css('background-image', 'url(content/images/drone_cross.svg)');
    moveDrone();
 });
 

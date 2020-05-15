@@ -22,6 +22,7 @@ body
 	width: 100%;
 
 	overflow-y: scroll;
+	overflow-x: hidden;
 
 	background-color: #000000;
 
@@ -139,9 +140,10 @@ section
 	top: -15px;
 	bottom: -15px;
 
-	width: calc(100% + 30px);
-	height: calc(100% + 30px);
+	width: calc(100vw + 30px);
+	height: calc(100vh + 30px);
 
+	overflow: hidden;
 	background-color: #000000;
 	z-index: 10;
 }
