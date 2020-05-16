@@ -10,8 +10,8 @@ $(document).ready(function(){
 			fadeOut($('.membercard')[i]);
 		}
 
-		fadeOut($('.title')[0]);
-		fadeOut($('.text')[0]);
+		fadeOut($('.content .title')[0]);
+		fadeOut($('.content .text')[0]);
 	});
 
 	for(var i = 0; i < $('.membercard').length; i++)

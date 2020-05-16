@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$(document.body).on('scroll', function(){
-		fadeOut($('.title')[0]);
-		fadeOut($('.text')[0]);
+		fadeOut($('.content .title')[0]);
+		fadeOut($('.content .text')[0]);
 
 		// for(var i = 0; i < $('.achievement').length; i++)
 		// {
