@@ -172,6 +172,11 @@
 	background-image: url('../content/images/projects.jpg');
 }
 
+#support .centerboard .image
+{
+	background-image: url('../content/images/support.jpg');
+}
+
 .contact_form
 {
 	position: relative;

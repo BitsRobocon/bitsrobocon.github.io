@@ -212,7 +212,7 @@
 
 .membercard .about a
 {
-	font-size: calc((20/768) * ((100vw + 100vh) / 2));
+	font-size: calc((30/768) * ((100vw + 100vh) / 2));
 	text-decoration: none;
 	color: #ffffff;
 }

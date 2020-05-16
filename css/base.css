@@ -60,6 +60,8 @@ body
 	position: absolute;
 	top: calc((50% - ((6.66/768) * ((100vw + 100vh) / 2))) - 10px);
 	right: 0px;
+
+	width: 62%;
 }
 
 .button
@@ -83,6 +85,11 @@ body
 {
 	color: #ffffff;
 	text-decoration: none;
+}
+
+.headerlinks .link a:hover
+{
+	color: #e0871e;
 }
 
 section
