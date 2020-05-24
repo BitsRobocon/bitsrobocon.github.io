@@ -1,6 +1,6 @@
 .background
 {
-	background-image: url('../content/backgrounds/background_main.jpg');
+	background-image: url('../content/backgrounds/background_projects.jpg');
 }
 
 .content
@@ -22,7 +22,7 @@
 	left: 0px;
 
 	width: 100%;
-	height: 45vh;
+	height: calc((260/768) * ((100vw + 100vh) / 2));;
 }
 
 .topsection .title
@@ -44,16 +44,16 @@
 .topsection .text
 {
 	position: absolute;
-	top: calc((60/768) * ((100vw + 100vh) / 2));
+	top: calc((80/768) * ((100vw + 100vh) / 2));
 	right: 0px;
 
 	width: 62%;
-	height: calc((20/768) * ((100vw + 100vh) / 2));
+	height: calc((15/768) * ((100vw + 100vh) / 2));
 
 	text-align: right;
 	font-family: 'Comfortaa', cursive;
 	color: #ffffff;
-	font-size: calc((20/768) * ((100vw + 100vh) / 2));
+	font-size: calc((15/768) * ((100vw + 100vh) / 2));
 	margin: 0px calc((50/768) * ((100vw + 100vh) / 2));
 }
 
@@ -111,6 +111,36 @@
 	visibility: hidden;
 }
 
+.achievement .name
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	background-color: #000000;
+	opacity: 0.8;
+	padding: calc((10/768) * ((100vw + 100vh) / 2));
+	border-radius: calc((10/768) * ((100vw + 100vh) / 2));
+
+	margin: calc((10/768) * ((100vw + 100vh) / 2)) calc((20/768) * ((100vw + 100vh) / 2));
+}
+
+.achievement .name .title
+{
+	font-size: calc((20/768) * ((100vw + 100vh) / 2));
+	color: #ffffff;
+	font-family: 'Muli', sans-serif;
+
+	margin-bottom: calc((10/768) * ((100vw + 100vh) / 2));
+}
+
+.achievement .name .text
+{
+	font-size: calc((10/768) * ((100vw + 100vh) / 2));
+	color: #ffffff;
+	font-family: 'Raleway', sans-serif;
+}
+
 .achievement .about
 {
 	position: absolute;
@@ -126,10 +156,14 @@
 	visibility: hidden;
 }
 
-.achievement .about.alt
+@media only screen and (min-width:475px)
 {
-	text-align: right;
+	.achievement .about.alt
+	{
+		text-align: right;
+	}
 }
+
 
 .achievement .about .title
 {

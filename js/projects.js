@@ -42,6 +42,10 @@ function hoverAbout(element){
 			{
 		    	element.childNodes[i].style.visibility = 'visible';
 		    }
+			else if (element.childNodes[i].className == "name")
+			{
+				element.childNodes[i].style.visibility = 'hidden';
+			}
 		}
 	});
 
@@ -51,6 +55,10 @@ function hoverAbout(element){
 			{
 		    	element.childNodes[i].style.visibility = 'hidden';
 		    }
+			else if (element.childNodes[i].className == "name")
+			{
+				element.childNodes[i].style.visibility = 'visible';
+			}
 		}
 	});
 }
