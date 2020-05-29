@@ -34,6 +34,11 @@
 	color: #ffffff;
 	font-family: 'Montserrat', sans-serif;
 	font-size: calc((40/768) * ((100vw + 100vh) / 2));
+	letter-spacing: 2px;
+}
+
+.sub-heading{
+	font-size:0.5em;
 }
 
 .blogs
@@ -78,7 +83,7 @@
 
 	color: #dddddd;
 	font-size: calc((18/768) * ((100vw + 100vh) / 2));
-	line-height: calc((23/768) * ((100vw + 100vh) / 2));
+	line-height: calc((23/768) * ((100vw + 100vh) / 2) + 5px);
 	font-family: 'Roboto', sans-serif;
 	text-align: left;
 }
@@ -149,6 +154,7 @@
 {
 	text-decoration: none;
 	color: #ffffff;
+	cursor: pointer;
 }
 
 .blogfooter a:hover
