@@ -14,7 +14,7 @@ function moveDrone() {
 
             var w = $(window).width();
         	var h = $(window).height();
-            var increment = ((3/768)*((w+h)/2));
+            var increment = ((5/768)*((w+h)/2));
 
     		if( pos >= (w+((50/768)*((w+h)/2))) )
     		{
