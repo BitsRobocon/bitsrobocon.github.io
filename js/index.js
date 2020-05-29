@@ -30,6 +30,33 @@ $(document).ready(function(){
 			fadeOut($('.upbutton')[i]);
 		}
 	});
+
+	$('.contact_form').submit(function () {
+
+	    // Get the Login Name value and trim it
+	    var name = $.trim($('#name').val());
+	    var email = $.trim($('#email').val());
+	    var message =$.trim($('#message').val());
+
+	    // Check if empty of not
+	    if (name === '') {
+	        alert('Name cannot be empty.');
+	        return false;
+	    }
+	    else if (email === '') {
+	        alert('Email cannot be empty.');
+	        return false;
+	    }
+	    else if (message === '') {
+	        alert('Message cannot be empty.');
+	        return false;
+	    }
+
+		if (isEmail(email) == false){
+			alert('Email is invalid.');
+			return false;
+		}
+	});
 });
 
 function fadeOut(element){
@@ -50,4 +77,9 @@ function fadeOut(element){
 	{
 		element.style.opacity = 1;
 	}
+}
+
+function isEmail(email) {
+	var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	return regex.test(email);
 }
