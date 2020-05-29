@@ -147,14 +147,16 @@
 	top: calc((50/768) * ((100vw + 100vh) / 2));
 	left: 0px;
 
-	width: 60%;
+	width: 80%;
 
-	margin: calc((25/768) * ((100vw + 100vh) / 2)) 20%;
+	margin: calc((25/768) * ((100vw + 100vh) / 2)) 10%;
 	padding: calc((50/768) * ((100vw + 100vh) / 2));
 
 	font-size: calc((12/768) * ((100vw + 100vh) / 2));
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
+	color: #ffffff;
+	line-height: calc((18/768) * ((100vw + 100vh) / 2));
 
 	border-top: calc((1/768) * ((100vw + 100vh) / 2)) solid #dddddd;
 	border-bottom: calc((1/768) * ((100vw + 100vh) / 2)) solid #dddddd;
