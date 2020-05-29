@@ -14,7 +14,7 @@ function moveDrone() {
 
             var w = $(window).width();
         	var h = $(window).height();
-            var increment = ((3/768)*((w+h)/2));
+            var increment = ((5/768)*((w+h)/2));
 
     		if( pos >= (w+((50/768)*((w+h)/2))) )
     		{
@@ -40,20 +40,58 @@ function moveDrone() {
 	}, 10);
 }
 
-function isEmail(email) {
-	var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	return regex.test(email);
-}
-
 $(document).ready(function(){
-    $('#subscribebutton').on('click', function(){
-		if (isEmail($('input[name ="Email"]')[0].value)){
-			$('#subscribeform').submit();
+	$(document.body).on('scroll', function(){
+		for(var i = 0; i < $('.blogcontent p').length; i++)
+		{
+			fadeOut($('.blogcontent p')[i]);
 		}
-		else {
-			alert('Please enter a valid Email address')
+
+		for(var i = 0; i < $('.blogcontent h1').length; i++)
+		{
+			fadeOut($('.blogcontent h1')[i]);
 		}
-    });
+
+		for(var i = 0; i < $('.blogcontent h2').length; i++)
+		{
+			fadeOut($('.blogcontent h2')[i]);
+		}
+
+		for(var i = 0; i < $('.blogcontent h3').length; i++)
+		{
+			fadeOut($('.blogcontent h3')[i]);
+		}
+
+		for(var i = 0; i < $('.blogcontent h4').length; i++)
+		{
+			fadeOut($('.blogcontent h4')[i]);
+		}
+
+		for(var i = 0; i < $('.blogcontent h5').length; i++)
+		{
+			fadeOut($('.blogcontent h5')[i]);
+		}
+
+        for(var i = 0; i < $('.blogcontent h6').length; i++)
+		{
+			fadeOut($('.blogcontent h6')[i]);
+		}
+
+        for(var i = 0; i < $('.blogcontent img').length; i++)
+		{
+			fadeOut($('.blogcontent img')[i]);
+		}
+
+        for(var i = 0; i < $('.blogcontent div').length; i++)
+		{
+			fadeOut($('.blogcontent div')[i]);
+		}
+
+        for(var i = 0; i < $('.blogcontent ul').length; i++)
+		{
+			fadeOut($('.blogcontent ul')[i]);
+		}
+	});
 });
 
 function fadeOut(element){
@@ -63,7 +101,7 @@ function fadeOut(element){
 	var w = $(window).width();
 
 	position -= ((100/768)*((h+w)/2));
-	var top = ((150/768)*((h+w)/2));
+	var top = ((110/768)*((h+w)/2));
 	position/=top;
 
 	if(position < 1)

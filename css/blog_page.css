@@ -1,3 +1,8 @@
+body, .footer
+{
+	background-color: #121212;
+}
+
 .top_section
 {
 	position: relative;
@@ -82,7 +87,7 @@
 	margin: calc((75/768) * ((100vw + 100vh) / 2)) 10%;
 
 	color: #dddddd;
-	font-size: calc((18/768) * ((100vw + 100vh) / 2));
+	font-size: calc((15/768) * ((100vw + 100vh) / 2));
 	line-height: calc((23/768) * ((100vw + 100vh) / 2) + 5px);
 	font-family: 'Roboto', sans-serif;
 	text-align: left;
@@ -152,7 +157,7 @@
 
 .blogfooter a
 {
-	text-decoration: none;
+	text-decoration: underline;
 	color: #ffffff;
 	cursor: pointer;
 }
