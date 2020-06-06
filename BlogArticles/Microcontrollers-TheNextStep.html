@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167540840-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-167540840-1');
+		</script>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height" />
+
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/blog_page.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../js/blogpage_base.js"></script>
+		<script type="text/javascript" src="../js/blog_form.js"></script>
+
+		<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Montserrat&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+		<script src="https://kit.fontawesome.com/8257830a22.js" crossorigin="anonymous"></script>
+
+		<title>The Robocon Blog</title>
+	</head>
+	<body>
+		<div class="header">
+			<a href="https://bitsrobocon.github.io/index">
+				<div class="logo">
+
+				</div>
+			</a>
+			<div class="headerlinks">
+				<div class="link">
+					<a href="https://www.ketto.org/fundraiser/team-robocon-bits-pilani-autonomous-quadcopter-quadruped?payment=form">Support</a>
+				</div>
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/projects">Projects</a>
+				</div>
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/team">Team</a>
+				</div>
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/blog">Blog</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="loader">
+			<div class="drone"></div>
+			<div class="block"></div>
+			<div class="title">Imagine. Innovate. Inspire.</div>
+		</div> -->
+
+		<div class="top_section">
+			<div class="background" style="background-image: url('../content/BlogImages/Microcontrollers/ImageMain.jpg')">
+
+			</div>
+			<div class="title">
+				<span class="heading">
+				<b>Microcontrollers</b></span><br/>
+				<span class="sub-heading">
+				<i>The Next Step</i></span>
+			</div>
+		</div>
+
+		<div class="blogs">
+			<div class="blogdate">
+				6th June, 2020.
+				Author - Anirudh Singh.
+			</div>
+			<div class="blogcontent">
+				<h2>What is a microcontroller really?</h2>
+				<p>
+					A microcontroller is a single-chip computer - a small computer with the bare minimum stuff to run programs on and create cool stuff.
+				</p>
+
+				<h4>Microcontrollers vs Microprocessors</h4>
+				<p>
+					You might have heard both the terms at least a bazillion times. Here's the difference:
+					Basically, a microcontroller constitutes a microprocessor. It's like your desktop tower. There's a CPU who's the big kid on the street and runs the show. Then there are these small kids whose sole purpose of existence is to serve the requirements for the big fat kid. These include RAM, Secondary storage, I/O ports, among several other things. When put together, it makes a microcontroller. Here's a diagram to support the explanation:
+				</p>
+				<img src="../content/BlogImages/Microcontrollers/image1.png" alt="">
+
+				<p>
+					Now, development boards (like the Arduino Uno, as featured in the <a href = "https://bitsrobocon.github.io/BlogArticles/Arduino-TheJourneyBegins">last post</a>) house in these microcontrollers and allow us to program and control them. (Uno has the ATmega 328p, but what's in the name anyway?)
+				</p>
+				<p>
+					Microcontrollers are used everywhere - from washing machines to satellites; from toy cars to cutting-edge autonomous cars. But to do that, they need more help, from devices like sensors, which leads us to:
+				</p>
+
+				<h2>An Intro to Sensors</h2>
+				<p>
+					Sensors are those thing-a-ma-jigs which allow a microcontroller to sense the real world. They convert a physical stimulus (like change in temp, height, acceleration) to digital (binary) signals, so the microcontroller can read them. There's a sensor available to measure almost every physical phenomenon.
+				</p>
+				<p>
+					Want to record the temperature for your fish tank project? Cool, there's the temperature sensor. Want to control the height of your autonomous drone? Look, there's the altitude sensor. You can measure the humidity, orientation, measure light intensity, acceleration, record images, make 3D scans of the real world (like what some self-driving cars do), and do any other thing imaginable with the right sensors!
+				</p>
+
+				<h2>Turning an LED on (...again?)</h2>
+				<p>
+					Here we go, making an LED on an Arduino Uno blink. Again. But this time, we are going to do it with a push-button (a nice example for a sensor). <br>
+					A push-button looks like this.
+				</p>
+				<img src="../content/BlogImages/Microcontrollers/image2.png" alt="">
+
+				<p>
+					It is a simple switch like the one that turns your fans on and off, really. The only difference is since these devils are so small. Because they have elastic metallic contacts, they tend to generate noise on clicking. <br>
+					This is called a switch bounce.
+				</p>
+				<img src="../content/BlogImages/Microcontrollers/image3.png" alt="">
+
+				<p>
+					<b>So come, young padawan, we are going to hack these little devils and read proper click on a push button.</b>
+				</p>
+				<img src="../content/BlogImages/Microcontrollers/image4.png" alt="">
+				<script src="https://gist.github.com/anirudhs001/cd901fff4efe99fccb23dd4ef0733e4f.js"></script>
+
+				<p>
+					Now, since these switches undergo an identity crisis when we click them. To go around this, we are going to 'delay' (the Arduino way to say: waiting for a specified period) and recheck, just to make sure if the button was really clicked.
+				</p>
+				<script src="https://gist.github.com/anirudhs001/ae15c93de007adcc7fdab34456608378.js"></script>
+
+				<p>
+					Voila! We have successfully captured a button press. Now think about this: your TV remote, smartphone, laptop, gamepads - all have been doing all this, without fail, recording each of your keypresses precisely (they are not necessarily mechanical push-buttons, but you know what I mean!).
+				</p>
+
+				<p>
+					With this, let’s turn our heads to...
+				</p>
+
+				<h2>PWM</h2>
+				<p>
+					Cool. We have officially turned on and off LEDs with timers and buttons. But we want more! Now we are going to change the intensity of the LED. To change the power output, we can change the average power supplied to the LED in two ways:
+				</p>
+
+				<ul>
+					<li>Change the direct voltage across the led.</li>
+					<li>Turn it on and off, very quickly and continuously.</li>
+				</ul>
+
+				<p>
+					However, LEDs have an optimal operating voltage (deviating too much from may break it). And what if we want to connect it to a Digital Pin(A pin that can only output at 2 levels: ON or OFF)? As eccentric as it may sound, we usually go about the second way to dim a LED. And this is called PWM (Pulse Width Modulation).<br>
+					Here's an image showing PWM at different <b>duty cycles</b> <i>(or simply put, the percentage of time the signal is high in a cycle)</i>
+				</p>
+				<img src="../content/BlogImages/Microcontrollers/image5.png" alt="">
+
+				<p>Here's a crude way to turn it on and off for half a cycle of 20 milliseconds.</p>
+				<script src="https://gist.github.com/anirudhs001/f0c7445302917fb49d62c989073d5201.js"></script>
+
+				<p>Hooray! But there's more. Luckily, this ugly piece of code has already been written in libraries. So here we go:</p>
+				<script src="https://gist.github.com/anirudhs001/03def53d82af25b891bb43372493c93a.js"></script>
+
+				<p>
+					Now, that’s more like it!<br>
+					We can now read misbehaving button clicks and change the brightness of LEDs. If you want to try, you can also mimic sinusoidal signals with PWM! There’s a lot more you can do, but I’ll leave you with room to think of more applications of what we’ve learnt today!
+				</p>
+
+				<p>
+					<i>Kudos for making it all the way till here!</i><br>
+					<b>Until next time...</b>
+				</p>
+
+				<h4>Resources</h4>
+				<ul>
+					<li>Read more about bouncing push buttons <a href="https://people.cs.clemson.edu/~yfeaste/855Assignments/presentations/team6-button-bounce.pdf">here.</a></li>
+					<li>Read more about PWM <a href="https://www.arduino.cc/en/tutorial/PWM">here</a> and <a href="http://www.pyroelectro.com/tutorials/fading_led_pwm/theory.html">here.</a></li>
+				</ul>
+
+				<p><b>Subscribe below to receive emails about more such awesome articles</b></p>
+			</div>
+			<div class="blogfooter">
+				<form action="https://usebasin.com/f/f33bcec6f0d2" method="post" id="subscribeform">
+					<input type="email" name="Email" placeholder="Enter Your Email">
+				</form>
+
+				<a id="subscribebutton">Click here</a><br> to recieve emails about new posts
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="footerlinks">
+				<a href="https://github.com/bitsrobocon" target="_blank"><i class="fa fa-github"></i></a>
+				<a href="https://www.instagram.com/bitsrobocon/" target="_blank"><i class="fa fa-instagram"></i></a>
+				<a href="https://www.linkedin.com/in/bitsrobocon/" target="_blank"><i class="fab fa-linkedin"></i></a>
+				<a href="https://www.facebook.com/bitspilanirobocon" target="_blank"><i class="fab fa-facebook"></i></a>
+				<a href="https://www.youtube.com/channel/UC-Ews2i7MBHdyIepKP6vqdA" target="_blank"><i class="fab fa-youtube"></i></a>
+			</div>
+			<div class="copyrighttext">
+				&copy; 2020 Team Robocon, BITS Pilani.
+			</div>
+		</div>
+	</body>
+</html>

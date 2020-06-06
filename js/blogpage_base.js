@@ -95,7 +95,7 @@ $(document).ready(function(){
 });
 
 function fadeOut(element){
-	var position = ((element.getBoundingClientRect().top + element.getBoundingClientRect().bottom)/2);
+	var position = ((element.getBoundingClientRect().bottom));
 
 	var h = $(window).height();
 	var w = $(window).width();
