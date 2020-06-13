@@ -80,40 +80,40 @@
 			<div class="blogcontent">
 				<p>
 					In the <a href="https://bitsrobocon.github.io/BlogArticles/Microcontrollers-TheNextStep">last blog</a>, we learned about microcontrollers and had an introduction to sensors.
-					We even learned how to blink an LED. However, a microcontroller has a RAM, processor, secondary storages, and whatnot.
-					It must be able to perform much more complex tasks in comparison to just blinking a led.
-					So today, we will be creating a more sophisticated yet exciting project.
-					To give you an idea, we will be creating an automatic sanitizer dispenser.
-					The system will have a sensor that will dispense the liquid if it detects any obstacle(the hand) up to a distance of 10cm.
+					We even learned how to blink an LED. However, a microcontroller has a RAM, processor, secondary storages, and what not!
+					It must be able to perform much more complex tasks in comparison to just blinking an LED.
+					So today, we will be creating a more sophisticated yet exciting project, something which is more relevant than ever.
+					We will be creating an automatic sanitizer dispenser!
+					The system will have a sensor that will dispense the liquid if it detects any obstacle (the hand) up to a distance of 10cm.
 				</p>
 
 				<h2>Basic things that we need to start - The hardware</h2>
 				<ul>
-					<li>Arduino Uno Board</li>
+					<li>Arduino Uno</li>
 					<li>A breadboard</li>
 					<li>A sanitizer bottle</li>
 					<li>Jumper wires</li>
-					<li>A sensor to measure the distance to know when to dispense liquid(we will use an ultrasonic sensor)</li>
+					<li>A sensor to measure the distance to know when to dispense liquid (we will use an ultrasonic sensor)</li>
 					<li>An SG-90 Servo (that moves to dispense the liquid)</li>
 				</ul>
 
-				<p>Let’s first cover what ultrasonic sensor and servo are : - </p>
+				<p>Let’s first cover what ultrasonic sensors and servos are:</p>
 
-				<p>An <b>Ultrasonic sensor</b> looks like this.</p>
+				<p>An <b>ultrasonic sensor</b> looks like this.</p>
 				<img src="../content/BlogImages/SensorsandMotors/image1.png" alt="">
 
 				<p>
 					Ultrasonic sensors work by emitting sound waves at a frequency too high for humans to hear.
-					Then, they wait for the sound to be reflected back and calculate the distance based on the time required.
-					This is similar to how radar measures the time it takes a radio wave to return after hitting an object.
+					Then, they wait for the sound to be reflected back and give back the time taken for the process, using which we can calculate the distance.
+					This is similar to how a radar measures the time it takes for a radio wave to return after hitting an object.
 				</p>
 
 				<p>
-					The two circular devices in the sensor are a transmitter and receiver.
+					The two circular devices in the sensor are a transmitter and a receiver.
 					The transmitter emits a wave of eight pulses, and simultaneously the echo pin becomes high.
 					As soon as the detector receives the bounced waves after collision from an object,
-					the echo pin turns low, and pulseIn function calculates the time(in milliseconds)
-					for which the echo pin was high. Now, we calculate the distance by using the famous formula, <br>
+					the echo pin turns low, and <b>pulseIn</b> function calculates the time (in milliseconds)
+					for which the echo pin was high. Now, we calculate the distance by using our trustworthy formula, <br>
 					<b><i>distance = speed * time</i></b>.
 				</p>
 
@@ -123,18 +123,18 @@
 				<img src="../content/BlogImages/SensorsandMotors/image2.png" alt="">
 
 				<p>
-					Unlike regular motors, these motors have 3 pins - power, ground, and a signal pin as well. The advantage of using a servo motor is that we can precisely control its rotation angle and the servo maintains this angle, even if we try to manipulate it by applying external torque.
-					Arduino can control the angular position of the servo by sending it a specific time-coded PWM signal to the motor's SIGNAL pin. Fortunately, we don’t have to worry about the exact details, since the “Servo.h” library in arduino takes care of that.
-					For more detail on how it works, click the link <a href="https://howtomechatronics.com/how-it-works/how-servo-motors-work-how-to-control-servos-using-arduino/">here</a>
+					Unlike regular motors, these motors have 3 pins - a SIGNAL pin, in addition to the usual POWER and GROUND pins. The advantage of using a servo motor is that we can precisely control its rotation angle and the servo maintains this angle, even if we try to manipulate it by applying external torque.
+					Arduino can control the angular position of the servo by sending it a specific time-coded PWM signal to the motor's SIGNAL pin. Fortunately, we don’t have to worry about the exact details, since the “Servo.h” library in the Arduino IDE takes care of all that.
+					For more detail on how it works, <a href="https://howtomechatronics.com/how-it-works/how-servo-motors-work-how-to-control-servos-using-arduino/">click here</a>.
 				</p>
 
 				<p>
-					Let’s try the sweep code which comes as an example program along with the servo library:
+					Let’s try the sweep code which comes as an example program along with the servo.h library:
 				</p>
 
 				<script src="https://gist.github.com/ekanshgupta92/646b0ca3d5cc07ad2e62c220d66c59c3.js"></script>
 
-				<p>Pheww! Quite a few things to process, right? Let’s get back to our project now.</p>
+				<p>Phew! Quite a few things to process, right? Let’s get back to our project now.</p>
 
 				<h2>Electrical</h2>
 
@@ -143,14 +143,14 @@
 				</p>
 				<img src="../content/BlogImages/SensorsandMotors/image3.png" alt="">
 
-				<h2>Programming!</h2>
+				<h2>Programming</h2>
 				<p>
 					Upload the following code to the Arduino in order to tell it what it is supposed to do and when.
 				</p>
 
 				<script src="https://gist.github.com/ekanshgupta92/2271a5efd057b5308313d69fc1297c02.js"></script>
 
-				<h2>A final step</h2>
+				<h2>The final step</h2>
 				<p>
 					We are all set now. All that is left is to set things in the right place as in the picture shown below.
 				</p>
@@ -158,21 +158,21 @@
 
 				<p>
 					Here, the servo is attached above the dispenser. However, you may use any mechanism that you feel good about.
-					Another possibility could be the following :-
+					Another possibility could be the following:
 				</p>
 				<img src="../content/BlogImages/SensorsandMotors/image5.png" alt="">
 				<img src="../content/BlogImages/SensorsandMotors/image6.png" alt="">
 
 				<p>
-					Note:-You might be tempted to connect the hardware before the wiring and coding part.
+					<i>Note:</i> You might be tempted to connect the hardware before the wiring and coding part.
 					But this isn’t advisable as there may be some faulty components.
 					First, start with the materials required for your project.
 					Then, complete the coding and electrical parts.
 					In the end, assemble and complete your project.
 				</p>
 
-				<p>Click <a href="https://www.tinkercad.com/things/hN9J8VxJhm4-sanitizer-dispenser/editel?sharecode=-QlGSwS_CiwM18Ryk0XM2gD4oQBZPE3QEAYqeed4J-Q">here</a> for a Tinkercad link to the project</p>
-				<p>You can simulate the project here. Click on start simulation and then select the ultrasonic sensor to vary the distance of obstruction.</p>
+				<p><a href="https://www.tinkercad.com/things/hN9J8VxJhm4-sanitizer-dispenser/editel?sharecode=-QlGSwS_CiwM18Ryk0XM2gD4oQBZPE3QEAYqeed4J-Q">Click here</a> for a Tinkercad link to the project.</p>
+				<p>You can simulate the project here. Click on 'Start Simulation' and then select the ultrasonic sensor to vary the distance of obstruction.</p>
 
 				<p>
 					Thanks for making it this far.<br>
