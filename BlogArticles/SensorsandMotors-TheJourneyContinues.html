@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167540840-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-167540840-1');
+		</script>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height" />
+
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/blog_page.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../js/blogpage_base.js"></script>
+		<script type="text/javascript" src="../js/blog_form.js"></script>
+
+		<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Montserrat&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+		<script src="https://kit.fontawesome.com/8257830a22.js" crossorigin="anonymous"></script>
+
+		<title>The Robocon Blog</title>
+	</head>
+	<body>
+		<div class="header">
+			<a href="https://bitsrobocon.github.io/index">
+				<div class="logo">
+
+				</div>
+			</a>
+			<div class="headerlinks">
+				<div class="link">
+					<a href="https://www.ketto.org/fundraiser/team-robocon-bits-pilani-autonomous-quadcopter-quadruped?payment=form">Support</a>
+				</div>
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/projects">Projects</a>
+				</div>
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/team">Team</a>
+				</div>
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/blog">Blog</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="loader">
+			<div class="drone"></div>
+			<div class="block"></div>
+			<div class="title">Imagine. Innovate. Inspire.</div>
+		</div> -->
+
+		<div class="top_section">
+			<div class="background" style="background-image: url('../content/BlogImages/SensorsandMotors/ImageMain.jpg')">
+
+			</div>
+			<div class="title">
+				<span class="heading">
+				<b>Sensors and Motors</b></span><br/>
+				<span class="sub-heading">
+				<i>The Journey Continues</i></span>
+			</div>
+		</div>
+
+		<div class="blogs">
+			<div class="blogdate">
+				13th June, 2020.
+				Author - Ekansh Gupta.
+			</div>
+			<div class="blogcontent">
+				<p>
+					In the <a href="https://bitsrobocon.github.io/BlogArticles/Microcontrollers-TheNextStep">last blog</a>, we learned about microcontrollers and had an introduction to sensors.
+					We even learned how to blink an LED. However, a microcontroller has a RAM, processor, secondary storages, and whatnot.
+					It must be able to perform much more complex tasks in comparison to just blinking a led.
+					So today, we will be creating a more sophisticated yet exciting project.
+					To give you an idea, we will be creating an automatic sanitizer dispenser.
+					The system will have a sensor that will dispense the liquid if it detects any obstacle(the hand) up to a distance of 10cm.
+				</p>
+
+				<h2>Basic things that we need to start - The hardware</h2>
+				<ul>
+					<li>Arduino Uno Board</li>
+					<li>A breadboard</li>
+					<li>A sanitizer bottle</li>
+					<li>Jumper wires</li>
+					<li>A sensor to measure the distance to know when to dispense liquid(we will use an ultrasonic sensor)</li>
+					<li>An SG-90 Servo (that moves to dispense the liquid)</li>
+				</ul>
+
+				<p>Let’s first cover what ultrasonic sensor and servo are : - </p>
+
+				<p>An <b>Ultrasonic sensor</b> looks like this.</p>
+				<img src="../content/BlogImages/SensorsandMotors/image1.png" alt="">
+
+				<p>
+					Ultrasonic sensors work by emitting sound waves at a frequency too high for humans to hear.
+					Then, they wait for the sound to be reflected back and calculate the distance based on the time required.
+					This is similar to how radar measures the time it takes a radio wave to return after hitting an object.
+				</p>
+
+				<p>
+					The two circular devices in the sensor are a transmitter and receiver.
+					The transmitter emits a wave of eight pulses, and simultaneously the echo pin becomes high.
+					As soon as the detector receives the bounced waves after collision from an object,
+					the echo pin turns low, and pulseIn function calculates the time(in milliseconds)
+					for which the echo pin was high. Now, we calculate the distance by using the famous formula, <br>
+					<b><i>distance = speed * time</i></b>.
+				</p>
+
+				<script src="https://gist.github.com/ekanshgupta92/3b86a9b5333617987b43131205866a15.js"></script>
+
+				<p>This is what a <b>Servo motor</b> looks like:</p>
+				<img src="../content/BlogImages/SensorsandMotors/image2.png" alt="">
+
+				<p>
+					Unlike regular motors, these motors have 3 pins - power, ground, and a signal pin as well. The advantage of using a servo motor is that we can precisely control its rotation angle and the servo maintains this angle, even if we try to manipulate it by applying external torque.
+					Arduino can control the angular position of the servo by sending it a specific time-coded PWM signal to the motor's SIGNAL pin. Fortunately, we don’t have to worry about the exact details, since the “Servo.h” library in arduino takes care of that.
+					For more detail on how it works, click the link <a href="https://howtomechatronics.com/how-it-works/how-servo-motors-work-how-to-control-servos-using-arduino/">here</a>
+				</p>
+
+				<p>
+					Let’s try the sweep code which comes as an example program along with the servo library:
+				</p>
+
+				<script src="https://gist.github.com/ekanshgupta92/646b0ca3d5cc07ad2e62c220d66c59c3.js"></script>
+
+				<p>Pheww! Quite a few things to process, right? Let’s get back to our project now.</p>
+
+				<h2>Electrical</h2>
+
+				<p>
+					Now that we know all the required hardware is working, we just connect them as shown in the image.
+				</p>
+				<img src="../content/BlogImages/SensorsandMotors/image3.png" alt="">
+
+				<h2>Programming!</h2>
+				<p>
+					Upload the following code to the Arduino in order to tell it what it is supposed to do and when.
+				</p>
+
+				<script src="https://gist.github.com/ekanshgupta92/2271a5efd057b5308313d69fc1297c02.js"></script>
+
+				<h2>A final step</h2>
+				<p>
+					We are all set now. All that is left is to set things in the right place as in the picture shown below.
+				</p>
+				<img src="../content/BlogImages/SensorsandMotors/image4.png" alt="">
+
+				<p>
+					Here, the servo is attached above the dispenser. However, you may use any mechanism that you feel good about.
+					Another possibility could be the following :-
+				</p>
+				<img src="../content/BlogImages/SensorsandMotors/image5.png" alt="">
+				<img src="../content/BlogImages/SensorsandMotors/image6.png" alt="">
+
+				<p>
+					Note:-You might be tempted to connect the hardware before the wiring and coding part.
+					But this isn’t advisable as there may be some faulty components.
+					First, start with the materials required for your project.
+					Then, complete the coding and electrical parts.
+					In the end, assemble and complete your project.
+				</p>
+
+				<p>Click <a href="https://www.tinkercad.com/things/hN9J8VxJhm4-sanitizer-dispenser/editel?sharecode=-QlGSwS_CiwM18Ryk0XM2gD4oQBZPE3QEAYqeed4J-Q">here</a> for a Tinkercad link to the project</p>
+				<p>You can simulate the project here. Click on start simulation and then select the ultrasonic sensor to vary the distance of obstruction.</p>
+
+				<p>
+					Thanks for making it this far.<br>
+					Sayonara.
+				</p>
+
+				<p><b>Subscribe below to receive emails about more such awesome articles</b></p>
+			</div>
+			<div class="blogfooter">
+				<form action="https://usebasin.com/f/f33bcec6f0d2" method="post" id="subscribeform">
+					<input type="email" name="Email" placeholder="Enter Your Email">
+				</form>
+
+				<a id="subscribebutton">Click here</a><br> to recieve emails about new posts
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="footerlinks">
+				<a href="https://github.com/bitsrobocon" target="_blank"><i class="fa fa-github"></i></a>
+				<a href="https://www.instagram.com/bitsrobocon/" target="_blank"><i class="fa fa-instagram"></i></a>
+				<a href="https://www.linkedin.com/in/bitsrobocon/" target="_blank"><i class="fab fa-linkedin"></i></a>
+				<a href="https://www.facebook.com/bitspilanirobocon" target="_blank"><i class="fab fa-facebook"></i></a>
+				<a href="https://www.youtube.com/channel/UC-Ews2i7MBHdyIepKP6vqdA" target="_blank"><i class="fab fa-youtube"></i></a>
+			</div>
+			<div class="copyrighttext">
+				&copy; 2020 Team Robocon, BITS Pilani.
+			</div>
+		</div>
+	</body>
+</html>
