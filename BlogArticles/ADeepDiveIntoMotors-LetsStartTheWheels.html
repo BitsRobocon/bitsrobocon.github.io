@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167540840-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-167540840-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height" />
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/blog_page.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/blogpage_base.js"></script>
+    <script type="text/javascript" src="../js/blog_form.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/8257830a22.js" crossorigin="anonymous"></script>
+
+    <title>The Robocon Blog</title>
+</head>
+
+<body>
+    <div class="header">
+        <a href="https://bitsrobocon.github.io/index">
+            <div class="logo">
+
+            </div>
+        </a>
+        <div class="headerlinks">
+            <div class="link">
+                <a
+                    href="https://www.ketto.org/fundraiser/team-robocon-bits-pilani-autonomous-quadcopter-quadruped?payment=form">Support</a>
+            </div>
+            <div class="link">
+                <a href="https://bitsrobocon.github.io/projects">Projects</a>
+            </div>
+            <div class="link">
+                <a href="https://bitsrobocon.github.io/team">Team</a>
+            </div>
+            <div class="link">
+                <a href="https://bitsrobocon.github.io/blog">Blog</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="loader">
+			<div class="drone"></div>
+			<div class="block"></div>
+			<div class="title">Imagine. Innovate. Inspire.</div>
+		</div> -->
+
+    <div class="top_section">
+        <div class="background" style="background-image: url('../content/BlogImages/MotorsDeepDive/main.jpg')">
+
+        </div>
+        <div class="title">
+            <span class="heading">
+                <b>A Deep Dive into Motors</b>
+            </span><br />
+            <span class="sub-heading">
+                <i>Let’s start the wheels...</i>
+            </span>
+        </div>
+    </div>
+
+    <div class="blogs">
+        <div class="blogdate">
+            20th June, 2020.
+            Author - Nidheesh Jain.
+        </div>
+        <div class="blogcontent">
+            <h5 style="text-align: center;">
+                Caution!! This post is a bit lengthy. <br>
+                Take a deep breath &nbsp;>&nbsp;
+                Count to 3 &nbsp;>&nbsp; Go!
+            </h5>
+
+            <p>
+                Hola!<br />
+                In the <a href="https://bitsrobocon.github.io/BlogArticles/SensorsandMotors-TheJourneyContinues">last
+                post</a>, we learned how to make an Automatic Sanitizer Dispenser. Now, it's time to take a
+                deeper look into its components.<br>
+                Apart from Arduino, there were two major electronic components in the project i.e. a DC Servo Motor and
+                an Ultrasound Sensor. <b>In this post, we will be primarily focusing on various types of motors.</b>
+                <br>So, let’s get started.
+            </p>
+
+            <h2>Motors</h2>
+            <p>
+                An electric motor is an electrical machine that converts electrical energy into mechanical energy.<br>
+                It’s safe to say that motors are the most widely used robotics component and virtually no robot can be
+                made without using motors.<br>
+                There are various types of motors available, and it's important to select the right motor for the right
+                purpose.<br>
+                Some famous types of motors are:
+                <ul>
+                    <li>AC motor</li>
+                    <li>Brushed DC motor</li>
+                    <li>Brushless DC motor</li>
+                    <li>Servo motor</li>
+                    <li>Stepper motor</li>
+                </ul>
+            </p>
+
+            <h3>AC Motors</h3>
+            <p>
+                As the name suggests, AC motors are driven by Alternating Current.<br>
+                There are mainly 2 subtypes of AC motors: Synchronous and Induction. <br>
+                These motors are rarely used in mobile robots because most of the robots are powered with direct current
+                (DC) coming from batteries. Also, since most of the modern electronic components use DC, it is more
+                convenient to have the same type of power supply for everything. Therefore, we will not go into details
+                of AC motors in this post.
+            </p>
+
+            <h3>Brushed DC Motors</h3>
+            <p>
+                Brushed DC motors (BDCs) are one of the easiest motors to understand and use (no doubt, these are the ones
+                we used to study in our physics textbooks). They are widely used in applications ranging from toys to
+                push-button adjustable car seats. They are inexpensive, easy to drive, and are readily available in all
+                sizes and shapes. In these motors, the armature windings create an alternating current. This has to be
+                commutated back to DC.
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/BrushedDCMotorBasic.jpg" alt="">
+
+            <p>
+                Brushed DC motors do this mechanically, using a commutator and brushes, which are attached to the motor’s
+                armature (rotor). The brushes are connected to the power source, and the commutator is made up of
+                individual segments that are attached to different rotor windings.
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/BrushedDCMotorInner.gif">
+
+            <p>
+                As the motor turns, the brushes contact the different segments of the commutator, which energizes the
+                windings in a specific sequence. This generates a dynamic magnetic field that allows the rotor to turn
+                continuously as its poles are attracted to the opposite poles on the stator.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="leftcol">
+                            <ul>
+                                <li>Low cost (as low as 20-30 Rupees)</li>
+                                <li>Ease of usage<br>
+                                    <small>
+                                        <i>
+                                            The gear assembly helps in increasing the torque and reducing the speed. This
+                                            concept where
+                                            gears reduce the speed of the vehicle but increase its torque is known as gear
+                                            reduction
+                                        </i>
+                                    </small>
+                                </li>
+                                <li>
+                                    Speed and directions can be easily controlled by PWM signals (pulse-width modulation) from a
+                                    microcontroller.
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Significant mechanical and electrical noise</li>
+                                <li>
+                                    The brushes and commutator of a BDC motor are most prone to wear because they slide past
+                                    each other
+                                </li>
+                                <li>
+                                    Create a lot of electrical noise that can find its way back into other circuitry and cause
+                                    problems.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h3>Brushless DC Motors</h3>
+
+            <p>
+                Brushless DC (BLDC) motors are called by many names: brushless permanent magnet, permanent magnet ac motors,
+                permanent magnet synchronous motors, etc.
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/BLDCMotorImage.jpg" alt="">
+
+            <p>
+                The confusion arises because a brushless dc motor does not directly operate from a DC voltage source. As you
+                can see from the above image (a commonly used BLDC), it has 3 wires instead of 2 (like a common BDC).
+            </p>
+            <p>
+                However, as we shall see, the basic principle of operation is similar to a DC motor.
+            </p>
+
+            <h4>Working</h4>
+            <p>
+                The mechanics of a brushless motor are incredibly simple.<br>
+                The only moving part is the rotor, which contains the magnets.
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/BDCMotorCrude.gif" alt="">
+
+            <p>
+                Where things become complicated is orchestrating the sequence of energizing windings. The polarity of each
+                winding is controlled by the direction of the current flow.
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/BLDCMotorRunning.gif" alt="">
+
+            <p>
+                The animation demonstrates a simple pattern that controllers would follow. Alternating current changes the
+                polarity, giving each winding a “push/pull” effect. The trick is, keeping this pattern in sync with the
+                speed of the rotor.
+            </p>
+            <p>
+                There are two (widely used) ways this can be accomplished. Most hobby controllers measure the voltage
+                produced (back EMI) on the un-energized winding. This method is very reliable for high-velocity
+                operation.
+            </p>
+            <p>
+                Okay... but, as the motor rotates slower, the voltage produced becomes more difficult to measure and more
+                errors are induced. Therefore, newer hobby controllers and many industrial controllers utilize
+                <a href="https://www.explainthatstuff.com/hall-effect-sensors.html">Hall effect sensors</a>
+                to measure the magnet’s position directly.
+            </p>
+
+            <h4>Speed Control</h4>
+
+            <p>
+            Controlling the speed of BLDC motors is also done by PWM but due to the complicated working nature of BLDC,
+            we must use a special device known as a Brushless Electronic Speed Controller (or simply, ESC).<br>
+            A brushless ESC takes 3 inputs: PWM from a microcontroller, VCC (Voltage Common Collector or simply, a
+            positive pin), and a Ground pin. ESC outputs sinusoidal signals to the three wires of BLDC (kind of, an AC supply).
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="leftcol">
+                            <ul>
+                                <li>
+                                    Higher efficiencies, high reliability, low electrical noise, good speed control, and
+                                    more importantly, no brushes or commutator to wear out producing a much higher speed
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>More complex controls</li>
+
+                                <li>Significantly higher costs</li>
+
+                                <li>Some types of BLDC even require a separate controller for operation.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h3>Servo Motors</h3>
+
+            <p>
+                Sometimes, we might want to rotate the motor to a specific angle and with precision. In such cases, we use a
+                servo motor.
+            </p>
+
+            <h4>Working</h4>
+
+            <p>
+                A servo motor is a normal DC motor (mostly brushed), with a gearbox and feedback mechanism (aka Servo
+                mechanism). The Servo mechanism consists of a potentiometer and a controller PCB.
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/ServoClosed.jpg" alt="">
+
+            <p>
+                Well, you might be thinking, what is the potentiometer doing here. It’s almost the same potentiometer that
+                we studied in our physics books, and the work it does is very simple too. It simply has a variable resistor
+                whose resistance depends on the rotation of its shaft. So, we can measure the rotation of its shaft by
+                measuring the resistance across this variable resistor. Simple enough, right? Let’s move on…
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/ServoOpen.jpg" alt="">
+
+            <p>
+                So, how a Servo motor works is pretty simple.<br>
+                Using a microcontroller like Arduino, We send the desired rotation angle as a PWM signal to the signal pin
+                of the servo (remember, the servo has 3 input pins – signal, VCC and Ground). The controller PCB recognizes
+                the desired input angle, checks the current potentiometer angle, and orders the DC motor to rotate
+                accordingly to achieve the desired angle from the current angle.<br>
+                A thing worth noting is, how this feedback system makes a closed-loop.<br>
+                DC Motor -> Potentiometer -> PCB -> DC Motor<br>
+                <small><i>
+                    “A Closed-loop Control System, also known as a feedback control system is a control system which
+                    uses the
+                    concept of an open-loop system as its forward path but has one or more feedback loops (hence its
+                    name) or
+                    paths between its output and its input.”
+                </i></small>
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="leftcol">
+                            <ul>
+                                <li>
+                                    Low Cost: Small SG-90 plastic servos can be purchased for 50-100 Rupees. And these are the
+                                    ones
+                                    that are commonly used in our projects.
+                                </li>
+                                <li>
+                                    Rates can increase exponentially with better material (like metal), better precision, better
+                                    gear assembly, less jitter, and more torque
+                                </li>
+                                <li>
+                                    Simple Control: Servos can be easily controlled by Arduino. Dedicated Servo motor
+                                    controllers,
+                                    as well as libraries, are also widely available
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <li>
+                                Most servos cannot rotate more than 90 degrees in either direction, i.e. total freedom of 180-degrees.<br>
+                                <small><i>
+                                    However, there is a special class of Servos known as Continuous Servo Motors which
+                                    offer 360-degree continuous rotation, but then we can only control its speed and
+                                    direction.
+                                </i></small>
+                            </li>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h3>Stepper Motors</h3>
+            <p>
+                Like servo motors, Stepper Motors are also used when we require precise control over the angle of rotation.
+                But Servo and Stepper motors have very different working principles (analogous to BDCs and BLDCs).<br>
+                Stepper motors can be seen in use in places where high precision is needed, for example, CNC machines!
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/StepperOutside.jpg" alt="">
+
+            <h4>Working</h4>
+            <p>
+                Stepper motors consist of a rotor with permanent magnets and a stationary stator that carries the windings.
+                When current runs through the stator windings, it generates a magnetic flux distribution that interacts with
+                the magnetic field distribution of the rotor to apply a turning force.
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/StepperInside.jpg" alt="">
+
+            <p>
+                Stepper motors feature very high pole counts, typically 50 or more. As the name suggests, a stepper motor
+                moves in steps. Because of the very high pole count, the motion appears to be continuous.
+            </p>
+
+            <img src="../content/BlogImages/MotorsDeepDive/StepperWorking.gif" alt="">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="leftcol">
+                            <ul>
+                                <li>
+                                    It can be accurately controlled in an open-loop system.
+                                    <small><i>
+                                        Open-loop control means no feedback
+                                        information about the position is needed.
+                                    </i></small>
+                                    <br> This type of control eliminates the need for expensive
+                                    sensing and feedback devices such as optical encoders / Hall sensors / Potentiometers.
+                                    Your position is known simply by keeping track of the input step pulses.
+                                </li>
+                                <li>
+                                    Steppers provide excellent torque at low speeds and are pretty reliable for ‘holding-torque’ as well.
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>At high speeds, steppers lose nearly all their torque, sometimes up to 80%. </li>
+                                <li>They produce high vibration levels and are prone to resonance issues </li>
+                                <li>Produce high amounts of heat, which can be an issue in certain applications.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Pheww!! In case, you made it till here, I can surely say that your interest in robotics is unparalleled.<br>
+                <i>Thanks a lot for reading! I hope this will be useful to you!</i>
+            </p>
+
+            <p>
+                <b>Subscribe below to receive emails about more such awesome articles</b>
+            </p>
+        </div>
+
+        <div class="blogfooter">
+            <form action="https://usebasin.com/f/f33bcec6f0d2" method="post" id="subscribeform">
+                <input type="email" name="Email" placeholder="Enter Your Email">
+            </form>
+
+            <a id="subscribebutton">Click here</a><br> to recieve emails about new posts
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footerlinks">
+            <a href="https://github.com/bitsrobocon" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="https://www.instagram.com/bitsrobocon/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/bitsrobocon/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/bitspilanirobocon" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UC-Ews2i7MBHdyIepKP6vqdA" target="_blank"><i
+                    class="fab fa-youtube"></i></a>
+        </div>
+        <div class="copyrighttext">
+            &copy; 2020 Team Robocon, BITS Pilani.
+        </div>
+    </div>
+</body>
+
+</html>

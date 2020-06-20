@@ -136,6 +136,38 @@ body, .footer
 	font-size: calc((12/768) * ((100vw + 100vh) / 2));
 }
 
+.blogcontent table
+{
+	position: relative;
+	top: 0px;
+	left: 0px;
+
+	width: 100%;
+
+	border-collapse: separate;
+	table-layout: fixed
+}
+
+.blogcontent table thead tr th
+{
+	text-align: center;
+}
+
+.blogcontent table tbody tr .leftcol
+{
+	border-right: 1px solid #cccccc
+}
+
+.blogcontent table tbody tr td
+{
+	padding: calc((10/768) * ((100vw + 100vh) / 2));
+}
+
+.blogcontent table tbody tr td ul
+{
+	padding-left: calc((20/768) * ((100vw + 100vh) / 2));
+}
+
 .footer
 {
 	top: calc((40/768) * ((100vw + 100vh) / 2));
