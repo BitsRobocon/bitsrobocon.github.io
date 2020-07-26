@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167540840-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-167540840-1');
+		</script>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height" />
+
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/blog_page.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../js/blogpage_base.js"></script>
+		<script type="text/javascript" src="../js/blog_form.js"></script>
+
+		<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Montserrat&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+		<script src="https://kit.fontawesome.com/8257830a22.js" crossorigin="anonymous"></script>
+
+		<title>The Robocon Blog</title>
+	</head>
+	<body>
+		<div class="header">
+			<a href="https://bitsrobocon.github.io/index">
+				<div class="logo">
+
+				</div>
+			</a>
+			<div class="headerlinks">
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/#support">Support</a>
+				</div>
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/projects">Projects</a>
+				</div>
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/team">Team</a>
+				</div>
+				<div class="link">
+					<a href="https://bitsrobocon.github.io/blog">Blog</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="top_section">
+			<div class="background" style="background-image: url('../content/BlogImages/Introducing_ROS-The_Linux_of_Robotics/image1.jpeg')">
+
+			</div>
+			<div class="title">
+				<span class="heading">
+				<b>Introducing ROS</b></span><br/>
+				<span class="sub-heading">
+				<i>Linux of Robotics</i></span>
+			</div>
+		</div>
+
+		<div class="blogs">
+			<div class="blogdate">
+				25th July, 2020.
+				Author - Hardik Jain.
+			</div>
+			<div class="blogcontent">
+				<div class="quote">
+					<div class="text">
+						'The Robot Operating System (ROS) is a flexible framework for writing robot software. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms.'
+					</div>
+					<div class="author">
+						- ros.org
+					</div>
+				</div>
+				<h2>But why should I know it? </h2>
+				<p>
+					We all have someday or the other heard of <b>turtlebots</b> (<i>if not below is a pic of <b>Tutlebot3</b></i>).<br>
+					<img src="../content/BlogImages/Introducing_ROS-The_Linux_of_Robotics/image2.png" alt="TurtleBot 3 Waffle Pi"><br>
+					They can perform <b>SLAM</b>(a method to simultaneously map and localize the position of a robot in an environment), navigation and are good ground bots.<br>
+				    Likewise there exist many robots which operate in different environments - <b>aerial, marine, manipulator, ...</b> <i>(you get the idea :D)</i></p>
+				<p>
+					Two <b>co-founders of ROS (Eric Berger and Keenan Wyrobek)</b> who were then completing their PhDs at Stanford, observed that when new bots were built (this is more than a decade old tale) the <b>same pattern repeated over and over</b> by those setting out to innovate on robotics software.
+					They spent <b>90 percent</b> of their time <b>rewriting code</b> others had written before and building a prototype test-bed.
+					Then the last <b>10 percent</b> of their efforts, at most, were spent on <b>innovation.</b></p>
+				<div class="quote">
+					<img src="../content/BlogImages/Introducing_ROS-The_Linux_of_Robotics/image3.png" alt="">
+					<div class="author">
+						- Willow Garage
+					</div>
+				</div>
+				<p>They decided upon creating an ecosystem in robotics which could be reusable and extensible, so that this process of recreating everything from scratch could be avoided and researchers could actually focus on creating and innovating. <b>ROS (and PR1)</b> was their solution to eliminate that massive amount of wasted time. In effect, they wanted to create <b>The Linux for Robotics.</b></p>
+				<p> The two young co-founders met <b>Scott Hassan</b>. Scott wanted to enable the future entrepreneurs of the robotics industry with an open-source foundation and he led the research lab now famously known as <b>Willow Garage</b>. So it was that goal of creating an open source reusable code which led to the creation of <b>ROS, Gazebo, MoveIt</b> and interestingly <b>OpenCV</b> also got revived.</p>
+				<p>In 2012, <b>Open Source Robotics Foundation (OSRF)</b> was created and it officially overtook the responsibilities for future maintenance and development of ROS.</p>
+				<p> You can get a better overview of the origin by reading this article on <a href="https://spectrum.ieee.org/automaton/robotics/robotics-software/the-origin-story-of-ros-the-linux-of-robotics">ieee-spectrum</a> written by one of the co-founders of ROS.</p>
+
+				<p>By the way this is the bot <b>PR1</b> that they <b>made back in 2006</b> and it still looks cool.</p>
+				<p class="videowrapper"><iframe src="https://www.youtube.com/embed/oyHWkQcin7I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+				<h2>Supporters</h2>
+				<p>ROS is widely used across top R&D labs, industry and academia. It is sponsored by NASA, MATLAB, Amazon, NVIDIA, Qualcomm, DARPA, ARM and the list goes on and on <span class="emoji">&#x1F60A;</span>.</p>
+				<p>I think you get a rough estimate of how essential it is to learn ROS if you want to proceed in robotics. </p>
+
+				<h2>Core structure</h2>
+				<img src="../content/BlogImages/Introducing_ROS-The_Linux_of_Robotics/image4.png" alt="">
+				<p>Let’s delve a little into the structure of ROS to get a better understanding of how things are working in ROS. The components of core structure are:
+
+				<h3>Topics</h3>
+				<p>
+					<b>Topics</b> are named <a href="https://en.wikipedia.org/wiki/Bus_network">buses</a> over which nodes exchange <a href="http://wiki.ros.org/Messages">messages</a>. Topics are intended for <b>unidirectional</b>, streaming communication. In general, nodes are not aware with whom they are communicating. Instead,
+					<ul>
+						<li>nodes that are interested in data subscribe to the relevant topic</li>
+						<li>nodes that generate data publish to the relevant topic</li>
+					</ul>
+					There can be multiple publishers and subscribers to a topic.
+				</p>
+				<h3>Services</h3>
+				<p>The <b>publish / subscribe</b> model is a very flexible communication model, but its many-to-many <b>one-way transport is not appropriate</b> for <a href="https://en.wikipedia.org/wiki/Remote_procedure_call">RPC</a> request / reply interactions, which are often required in a distributed system. Request / reply is done via a <b>Service</b>, which is defined by a pair of messages: one for the request and one for the reply.</p>
+
+				<h3>Nodes</h3>
+				<img src="../content/BlogImages/Introducing_ROS-The_Linux_of_Robotics/image5.png" alt="">
+				<p>A <b>node</b> is a process that performs computation. Nodes are combined together into a graph and communicate with one another using streaming <b>topics</b>, <b><a href="https://en.wikipedia.org/wiki/Remote_procedure_call">RPC</a> services</b>, and the <b>Parameter Server</b>. These nodes are meant to operate at a fine-grained scale. A robot control system will usually comprise many nodes. For example, one node controls a laser range-finder, one Node controls the robot's wheel motors, one node performs localization, one node performs path planning, one node provides a graphical view of the system, and so on.</p>
+
+				<h3>Ros Master</h3>
+				<p>The ROS Master provides naming and registration services to the rest of the Nodes in the ROS system. It tracks publishers and subscribers to Topics as well as Services. The role of the master is to enable individual ROS nodes to locate one another. Once these nodes have located each other they communicate with each other peer-to-peer.</p>
+
+				<h3>Parameter server</h3>
+				<p>Configuration information in ROS is usually saved to the Parameter server. It is a collection of values that can be accessed upon request through the terminal, nodes or launch files. Parameters are intended to be fairly static, globally available values such as integers, floats, strings or bool values.</p>
+
+				<h2>Command line tools</h2>
+				<div class="quote">
+					<div class="text">
+						'ROS can be used 100% without a GUI.'
+					</div>
+					<div class="author">
+						- ros.org
+					</div>
+				</div>
+				<p>There are more than a dozen command line tools, the prominent ones are:</p>
+				<h3>roslaunch</h3>
+				<p>It is a tool for easily launching multiple ROS nodes locally and remotely via SSH, as well as setting parameters on the Parameter Server.</p>
+				<h3>rosbash</h3>
+				<p>The rosbash package contains some useful bash functions and adds tab-completion to a large number of the basic ros utilities. These commands are similar to what we see in many linux distros.</p>
+				<ul>
+					<li><a href="http://wiki.ros.org/rosbash#roscd">roscd</a> - change directory starting with package, stack, or location name.</li>
+					<li><a href="http://wiki.ros.org/rosbash#rospd">rospd</a> - pushd equivalent of roscd, i.e. saves the current working directory in memory.</li>
+					<li><a href="http://wiki.ros.org/rosbash#rosd">rosd</a> - lists directories in the directory-stack.</li>
+					<li><a href="http://wiki.ros.org/rosbash#rosls">rosls</a> - list files of a ros package.</li>
+					<li><a href="http://wiki.ros.org/rosbash#rosed">rosed</a> - edit a file in a package.</li>
+					<li><a href="http://wiki.ros.org/rosbash#roscp">roscp</a> - copy a file from a package.</li>
+					<li><a href="http://wiki.ros.org/rosbash#rosrun">rosrun</a> - run executables of a ros package.</li>
+				</ul>
+
+				<h3>catkin</h3>
+				<p><b>catkin</b> is the official <a href="https://en.wikipedia.org/wiki/Software_build">build system</a> of ROS and the successor to the original build system, <a href="http://wiki.ros.org/rosbuild">rosbuild</a>. It combines <a href="https://cmake.org/cmake/help/latest/command/macro.html">CMake macros</a> and Python scripts to provide some functionality on top of CMake's normal workflow. It was designed to be more conventional than <a href="http://wiki.ros.org/rosbuild">rosbuild</a>, allowing for better distribution of packages, better cross-compiling support and better portability. It has a workflow very similar to CMake but it adds support for automatic find package infrastructure and building multiple, dependent projects at the same time.</p>
+				<p><i>Interestingly, the name <b>catkin</b> comes from the tail-shaped flower cluster found on willow trees (a reference to <b>Willow Garage</b> where catkin was created ;) )</i></p>
+
+				<h3>rosbag</h3>
+				<p>A <b>bag</b> is a file format in ROS for storing ROS message data. Bags are so named because of their <b>.bag</b> extension.</p>
+				<p>The rosbag command-line tool provides functionality for ROS bags.</p>
+				<p>It can <b>record, republish the messages, summarize the contents, check definitions and filter</b> a bag's messages based on a Python expression.</p>
+
+				<h2>Graphical Tools</h2>
+
+				<h3>rqt</h3>
+				<p>Rqt is a software framework of ROS that implements the various GUI tools in the form of plugins. One can run all the existing GUI tools as dockable windows within rqt! The tools can still run in a traditional standalone method, but rqt makes it easier to manage all the various windows on the screen at one moment.</p>
+				<p>You can create your own plugins for rqt with either Python or C++.</p>
+
+				<h2>3d visualization</h2>
+				<h3>rviz</h3>
+				<p class="videowrapper"><iframe src="https://www.youtube.com/embed/i--Sd4xH9ZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+				<p>Rviz, abbreviation for ROS visualization, is a powerful 3D visualization tool for ROS. It is accessible via the GUI and probably the most widely known ROS tool. It allows you to view the simulated robot model, log sensor information from the robot's sensors, and replay the logged sensor information.</p>
+				<p>Rviz displays <b>3D sensor data from stereo cameras, lasers, Kinects, and other sensors in the form of point clouds or depth images</b> (check out blog on <a href="https://bitsrobocon.github.io/BlogArticles/MotionPlanning-MakingOurOwnPath">Motion planning</a> which explains them nicely). 2D sensor data from webcams, RGB cameras, and 2D laser rangefinders can be viewed in rviz as image data.</p>
+				<p>If an actual robot is communicating with a workstation that is running rviz, rviz will display the robot's current configuration on the virtual robot model. ROS topics will be displayed as live representations based on the sensor data published by any sensor that are part of the robot's system.</p>
+				<p>There is also <b>Gazebo</b> but it deserves a blog of it’s own so I won’t be discussing it :)
+				<h2>Future</h2>
+				<p><b>ROS 2</b> is a completely rewritten software, and has many advantages over ROS 1. These include <b>multi platform support, embedded systems support, real-time execution, better resource handling</b> and the list goes on …</p>
+				<p>The latest release of <b>ROS 1 (Noetic Ninjemys)</b> with support for Ubuntu 20.04 (focal fossa) also happens to be the last release of ROS 1 (which will be supported till 2025). From now on, all releases shall be for <b>ROS 2</b>.</p>
+
+				<h2>Conclusion</h2>
+				<p><b>ROS</b>  is an awesome open source project and is definitely worth it if you want to get into robotics. It will save you a good time as there’s not much to gain from reinventing the wheel. Below are some useful links that will help you to get started.</p>
+				<h3>Where to get started from</h3>
+				<ul>
+					<li>Link to <a href="http://wiki.ros.org/ROS/Tutorials">ROS tutorials</a>, <a href="http://discourse.ros.org/">discourse channel</a>, <a href="https://answers.ros.org/questions/">Q&A</a>, <a href="https://wiki.ros.org/">wiki</a></li>
+					<li>If you find a bug report on their <a href="http://wiki.ros.org/Tickets">issue trackers</a>.</li>
+					<li>Since it's an open source project, please think about contributing whenever possible, the community is quite supportive (speaking from personal experience).</li>
+					<li>Interesting facts about ROS (you may skip if you want to)</li>
+					<ul>
+						<li>ROS is <b>language agnostic</b>, you can easily communicate between a Python node and a C++ node which means lots of reusability and flexibility.</li>
+						<li>There are client libraries <b>rosjava</b> and one also for <b>JS</b>. This has enabled ROS based software to be written on <b>Android OS</b> and there’s a <b>MATLAB toolbox</b>.</li>
+						<li>OSRF also has been participating in GSoC for the past several years, this year they had 7 listed projects.</li>
+						<li><a href="https://roscon.ros.org/">ROSCon</a> is a developers conference, in the model of PyCon and BoostCon.</li>
+					</ul>
+				</ul>
+				<p>
+					Cool, real life projects awaited in future blogs. Stay tuned!<br>
+					<i>Thanks for reading and making it this far!</i> <span class="emoji">&#x1f60a;</span>
+				</p>
+				<p><b>Subscribe below to receive emails about more such awesome articles</b></p>
+			</div>
+			<div class="blogfooter">
+				<form action="https://usebasin.com/f/f33bcec6f0d2" method="post" id="subscribeform">
+					<input type="email" name="Email" placeholder="Enter Your Email">
+				</form>
+
+				<a id="subscribebutton">Click here</a><br> to receive emails about new posts
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="footerlinks">
+				<a href="https://github.com/bitsrobocon" target="_blank"><i class="fa fa-github"></i></a>
+				<a href="https://www.instagram.com/bitsrobocon/" target="_blank"><i class="fa fa-instagram"></i></a>
+				<a href="https://www.linkedin.com/in/bitsrobocon/" target="_blank"><i class="fab fa-linkedin"></i></a>
+				<a href="https://www.facebook.com/bitspilanirobocon" target="_blank"><i class="fab fa-facebook"></i></a>
+				<a href="https://www.youtube.com/channel/UC-Ews2i7MBHdyIepKP6vqdA" target="_blank"><i class="fab fa-youtube"></i></a>
+			</div>
+			<div class="copyrighttext">
+				&copy; 2020 Team Robocon, BITS Pilani.
+			</div>
+		</div>
+	</body>
+</html>
