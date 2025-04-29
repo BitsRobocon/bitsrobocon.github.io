@@ -60,7 +60,7 @@
 .legacysection
 {
 	position: relative;
-	top: calc((40/768) * ((100vw + 100vh) / 2));
+	top: calc((40/768) * ((100vw + 100vh) / 2) + 10vw);
 	left: 0px;
 
 	width: 100%;
@@ -316,4 +316,8 @@
 	font-size: calc((15/768) * ((100vw + 100vh) / 2));
 	font-family: 'Comfortaa', cursive;
 	color: #ffffff;
+}
+
+.pad {
+	padding-top: 100px;
 }

@@ -212,4 +212,35 @@
 {
 	background-image: url('../content/userdata/2021Batch/chandrashekar.png');
 }
-
+.membercard #shubh
+{
+	background-image: url('../content/userdata/2022Batch/shubh.jpg');
+}
+.membercard #devc
+{
+	background-image: url('../content/userdata/2022Batch/devc.jpg');
+}
+.membercard #ananya
+{
+	background-image: url('../content/userdata/2022Batch/ananya.jpg');
+}
+.membercard #dev
+{
+	background-image: url('../content/userdata/2023Batch/dev.jpg');
+}
+.membercard #biswa
+{
+	background-image: url('../content/userdata/2023Batch/biswa.jpg');
+}
+.membercard #paras
+{
+	background-image: url('../content/userdata/2023Batch/paras.png');
+}
+.membercard #akshat
+{
+	background-image: url('../content/userdata/2023Batch/akshat.jpg');
+}
+.membercard #ayush
+{
+	background-image: url('../content/userdata/2023Batch/ayush.jpg');
+}
